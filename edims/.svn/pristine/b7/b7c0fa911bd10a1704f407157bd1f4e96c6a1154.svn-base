@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="GBK" standalone="yes"?>
+<PGK>
+    <DATA><![CDATA[<?xml version="1.0" encoding="GBK" standalone="yes"?>
+<CBSERPPGK>
+    <INFO>
+        <FUNNAM>ERPAYSAV</FUNNAM>
+    </INFO>
+    <APPAYSAVX>
+        <RECNUM>1</RECNUM>
+        <OPRTYP>202</OPRTYP>
+        <BUSTYP>0</BUSTYP>
+        <REFNBR>PT19082111QGV98GMK119080483</REFNBR>
+        <CLTACC>4000027219200095989</CLTACC>
+        <TRSAMT>68.86</TRSAMT>
+        <CCYNBR>10</CCYNBR>
+        <REVACC>4000023009027339382</REVACC>
+        <REVBNK>招商银行股份有限公司杭州分行</REVBNK>
+        <REVNAM>蘖控绣采恍马钳疏野该痼赴挥傻炼圳晰挥傻（揉拗鸦）</REVNAM>
+        <REVPRV>浙江省</REVPRV>
+        <REVCIT>杭州市</REVCIT>
+        <BNKTYP>CMB</BNKTYP>
+        <BRDNBR>308331012011</BRDNBR>
+        <OPRMOD>3</OPRMOD>
+        <PAYTYP>2</PAYTYP>
+        <COPFLG>1</COPFLG>
+        <CTYFLG>1</CTYFLG>
+       <TRSUSE>1</TRSUSE>
+        <ERPCM2>MK119080483</ERPCM2>
+    </APPAYSAVX>
+</CBSERPPGK>
+]]></DATA>
+    <CHECKCODE>Z4FCCC807</CHECKCODE>
+</PGK>

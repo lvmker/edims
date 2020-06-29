@@ -1,0 +1,83 @@
+server:
+  port: 8091
+
+logging:
+    level:
+        com.bgi.edims.mapper : error
+    path: /mnt/logs
+        
+
+spring:
+    mvc:
+        view:
+            prefix: /
+            suffix: .html  
+    servlet:
+        multipart:
+            max-request-size: 100MB
+            max-file-size: 10MB
+    mail:
+        host: smtp.qq.com
+        username:
+        password: 
+    properties:
+        mail:
+            smtp:
+                auth: true
+                starttls:
+                    enable: true
+                    required: true
+    datasource:
+        name: mysql_edi
+        type: com.alibaba.druid.pool.DruidDataSource
+        #druid相关配置
+        druid:
+          #监控统计拦截的filters
+          filters: stat
+          driver-class-name: com.mysql.jdbc.Driver
+          #基本属性
+          url: jdbc:mysql://39.108.146.48:3306/edi?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+          username: root
+          password: Qweasd123$
+          #配置初始化大小/最小/最大
+          initial-size: 1
+          min-idle: 1
+          max-active: 20
+          #获取连接等待超时时间
+          max-wait: 60000
+          #间隔多久进行一次检测，检测需要关闭的空闲连接
+          time-between-eviction-runs-millis: 60000
+          #一个连接在池中最小生存的时间
+          min-evictable-idle-time-millis: 300000
+          validation-query: SELECT 'x'
+          test-while-idle: true
+          test-on-borrow: false
+          test-on-return: false
+          #打开PSCache，并指定每个连接上PSCache的大小。oracle设为true，mysql设为false。分库分表较多推荐设置为false
+          pool-prepared-statements: false
+          max-pool-prepared-statement-per-connection-size: 20
+
+mybatis:
+  mapper-locations: classpath*:mybatis/mapper/*.xml
+  config-location: classpath:mybatis/mybatis-config.xml
+
+#pagehelper
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+    returnPageInfo: check
+    
+thymeleaf:
+   cache: false
+   mode: LEGACYHTML5
+  
+edi:
+  asnmodel: /mnt/data/model.csv
+  path: 
+      asn: /mnt/data/asn
+      order: /mnt/data/order
+      inner: /mnt/data/inner
+  roleid: 7c4d8878-d58c-4c74-9554-3e58e2661452
+  

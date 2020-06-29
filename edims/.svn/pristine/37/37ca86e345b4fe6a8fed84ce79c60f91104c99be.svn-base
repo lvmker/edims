@@ -1,0 +1,125 @@
+
+#公共环境
+spring:
+  application:
+    name: middle-componentexportInfo #指定服务名
+  profiles:
+    active: local
+  datasource: #配置数据源
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.88.128:3306/tensquare_base?characterEncoding=utf-8
+    username: root
+    password: 123456
+    jpa:
+      database: MySQL #指定数据库类型
+      show-sql: true
+      generate-ddl: true
+#CBS配置
+CBS:
+  host: http://localhost:12345
+#secretKey用户秘钥，用于对应CBS生成报文的秘钥
+  secretKey: 12345
+openapi:
+  maycur:
+    authapi: /api/openapi/auth/login
+    costtrackingapiSave: /api/openapi/costtracking/item/save
+    request-approved: /api/openapi/request/approved
+    budget-account: /api/openapi/budget/account
+    credits: /api/openapi/credits
+    paymenttransaction-list: /api/openapi/paymenttransaction/list
+    paymenttransaction-update: /api/openapi/paymenttransaction/update
+    update-byFormCode: /api/openapi/paymenttransaction/update/byFormCode
+    report-personal-detail: /api/openapi/report/personal/detail?businessCode=MK119060103
+    report-corp-submitted: /api/openapi/report/corp/submitted
+    report-corp-detail:  /api/openapi/report/corp/detail
+    report-consume-detail: /api/openapi/report/consume/detail
+    departmentSave: /api/openapi/org/department/save
+    budget-freeze: /api/openapi/budget/freeze
+    budget-release: /api/openapi/budget/release
+    supplierSave: /api/openapi/supplier/save
+    budget-occupy: /api/openapi/budget/occupy
+    report-personal-exportInfo-update: /api/openapi/report/personal/exportInfo/update
+    report-personal-submitted: /api/openapi/report/personal/submitted
+    attendance: /api/openapi/attendance
+    employeeSave: /api/openapi/employee/save
+    employee: /api/openapi/employee
+    accountPersonalSave: /api/openapi/account/personal/save
+    employreport-personal-submittedee-save: /api/openapi/employee/save
+    corprepayment-report—detail-api: /api/openapi/report/corp/repayment/detail
+    report-corp-repayment-exportInfo-update: /api/openapi/report/corp/repayment/exportInfo/update
+    report-corp-exportInfo-update: /api/openapi/report/corp/exportInfo/update
+    preconsume-save: /api/openapi/preconsume/save
+    preconsume-trip-save: /api/openapi/preconsume/trip/save
+    userGroupSave: /api/openapi/usergroup/save
+    paymenttransaction-update-noSequence: /api/openapi/paymenttransaction/update/noSequence
+    budget-formulate-auxAccounting: /api/openapi/budget/formulate/auxAccounting
+    external-form-link-save: /api/openapi/external-form-link/save
+    costtracking-item-getCostTrackingItem: /api/openapi/costtracking/item/getCostTrackingItem
+    huangshun: 以下为我添加的业务实体部分
+    org-subsidiary-save: /api/openapi/org/subsidiary/save
+    subsidiaryDelete: /api/openapi/org/subsidiary/delete
+    subsidiarybyUpdateTime: /api/openapi/org/subsidiaries
+    departmentDelete: /api/openapi/org/department/delete
+    employeeDepartmentSave: /api/openapi/employee/department/save
+    employeeDepartmentDetete: /api/openapi/employee/department/delete
+    org-employee-costTracking-items-save: /api/openapi/employee/costTracking/items/sav
+    employeeDisable: /api/openapi/employee/disable
+    findEmployeebylimtAndend: /api/openapi/employee?offset=0&limit=500
+    org-exchangerate-save: /api/openapi/exchangerate/save
+    org-fee-type-all: /api/openapi/fee-type/list-all
+    org-account-save: /api/openapi/account_save
+    org-account-corp-save: /api/openapi/account/corp/save
+    userGroupQueryUserGruop: /api/openapi/usergroup/query/userGroup
+    reporterPersonalSubmitted: /api/openapi/report/personal/submitted
+    reporterCorpDetail: /api/openapi/report/corp/detail?businessCode=MK518120714
+    reporterConsumeSubmitted: /api/openapi/report/consume/submitted
+    reporterConsumeDetail: /api/openapi//report/consume/detail?businessCode=MK219060506
+    reporterConsumeCorrelation: /api/openapi/report/consume/correlation?businessCode=MK219060506
+    reporterCorpRepaymetSubmmite: /api/openapi/report/corp/repayment/submitted
+    accountSubjectAttributeTargets: /api/openapi/accounting/subject/attribute/targets
+    accountSubjectAttributeSave: /api/openapi/accounting/subject/attribute/save
+    costtrackingItemDelete: /api/openapi/costtracking/item/delete
+    constrrackingItemAuth: /api/openapi/costtracking/item/auth
+    corpContractSave: /api/openapi/corp/contract/save
+    reporterApprovals: /api/web/report/approvals
+    departmentPartUpdate: /api/openapi/org/department/part/update
+    departments: /api/openapi/org/departments
+    employeeCostTrackingItemSave: /api/openapi/employee/costTracking/items/save
+    employeeRolesIncremental: /api/openapi/employee/roles/incremental
+    employeeBusinessPrivilegeIncremental: /api/openapi/employee/business/privilege/incremental
+    costtrackingItemRevoke: /api/openapi/costtracking/item/revoke
+    accountPersonalDelete: /api/openapi/account/personal/delete/456651
+    accountPersonalAbroadSave: /api/openapi/account/personal/abroad/save
+    userGroupSaveDelta: /api/openapi/usergroup/save/delta
+
+#各个环境的配置信息
+#*********本地环境********
+---
+spring:
+  profiles: local
+  mail:
+    host: smtp.qq.com
+    username: 1111111@qq.com
+    password: yasbjcvgcbtaegkbccc
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          timeout: 25000
+          starttls:
+            enable: true
+            required: true
+
+#服务端口号
+server:
+  port: 8080
+#每刻配置
+maycur:
+  code: UI180807TTXS001
+  secret: 123456
+  host: https://uat.maycur.com
+
+#日志文件
+logging:
+  path: d:/Users/tbpositive/logs
